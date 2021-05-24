@@ -421,3 +421,6 @@ contract Ownable is Context {
         _;
     }
 }
+
+contract LiquidityLock is Context, Ownable {
+}
