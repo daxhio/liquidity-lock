@@ -423,4 +423,21 @@ contract Ownable is Context {
 }
 
 contract LiquidityLock is Context, Ownable {
+
+    //this is the address of the liquidity pool tokens(LP)
+    address LPAddress = 0x4C5b0FD98b5aF7eBDBBA819dc19c938b9134b15b;
+    uint256 timeDeployed;
+    uint256 timeToLock;
+    
+    constructor(uint256 time) public {
+        timeDeployed = block.timestamp;
+        timeToLock = time * 1 days;
+    }
+    
+    function withdrawLP() public onlyOwner {
+        require(IERC20(LPAddress).balanceOf(address(this)) > 0, "Can't withdraw 0");
+        require(block.timestamp >= timeDeployed + timeToLock , "Can't withdraw yet");
+        
+        IERC20(LPAddress).transfer(owner(), IERC20(LPAddress).balanceOf(address(this)));
+    }
 }
