@@ -449,4 +449,8 @@ contract LiquidityLock is Context, Ownable {
     function addMoreDays(uint256 time) public onlyOwner {
         timeToLock = timeToLock + time * 1 days;
     }
+
+    function setLPAddress(address _address) public onlyOwner {
+        LPAddress = _address;
+    }
 }
