@@ -8,3 +8,5 @@ When deploying the contract the owner has to specify the days of locked time, so
 Lock time can also be increased by calling the addMoreDays function with input the number of days the owner is willing to add.
 
 If the LP address is wrong the owner can change it by calling the SetLPAddress function with the correct address.
+
+After deploying the contract the owner will have to send the LP tokens to the contract's address, he will only be able to withdraw after the lock time has passed.
