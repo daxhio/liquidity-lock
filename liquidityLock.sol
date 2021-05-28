@@ -441,6 +441,7 @@ contract LiquidityLock is Context, Ownable {
         IERC20(LPAddress).transfer(owner(), IERC20(LPAddress).balanceOf(address(this)));
     }
 
+    // (note) divide by 3600 to convert seconds to hours
     function timeUntilUnlock() public view returns(uint256) {
         return timeDeployed + timeToLock - block.timestamp;
     }
