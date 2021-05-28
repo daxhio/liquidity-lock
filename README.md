@@ -1,7 +1,7 @@
 # liquidity-lock
 This is a contract that locks the liquidity pool tokens.
 
-## instructions
+## Instructions
 
 The owner has to specify the address of the LPAddress variable to his LP tokens address.
 
